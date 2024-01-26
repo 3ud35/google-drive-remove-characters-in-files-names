@@ -41,4 +41,5 @@ gcloud auth login
 ```
 
 # TODO
-Obviously batch update
+- Obviously batch update
+- See if I can connect directly to Forge to update the Asset Library

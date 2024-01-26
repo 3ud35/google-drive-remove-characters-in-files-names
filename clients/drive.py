@@ -78,14 +78,14 @@ class Drive_Rename(Drive):
                     if character in file_name:
                         new_name = file_name.replace(character, " ")
                         self.rename_file(image.get("id"), new_name)
-                        print(f"{file_name}   =>   {new_name}")
+                        logging.info(f"{file_name}   =>   {new_name}")
                         counter+= 1
 
             if counter > 0:
-                print(f"Images successfuly renamed in the folder {folder_id}")
+                logging.info(f"Images successfuly renamed in the folder {folder_id}")
 
         folders = self.get_files_from_folder(folder_id, "folder")
         if len(folders) > 0:
             for folder in folders:
-                print(f"##### FOLDER: {folder.get("name")}")
+                logging.info(f"##### FOLDER: {folder.get("name")}")
                 self.remove_separators(folder.get("id"), characters)
